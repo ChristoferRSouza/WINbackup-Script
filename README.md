@@ -1,159 +1,228 @@
-# WINbackup – Script Automático de Backup
+<div align="center">
 
-Este script foi desenvolvido pelo [Canal WINchester](https://www.youtube.com/WINchesterCanal) para facilitar o backup e restauração de drivers, arquivos pessoais e favoritos de navegadores no Windows, de forma simples e automática.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=0078D7&center=true&vCenter=true&width=600&lines=WINbackup+%F0%9F%92%BE;Backup+e+Restaura%C3%A7%C3%A3o+para+Windows" alt="WINbackup" />
+
+<br/>
+
+[![Windows](https://img.shields.io/badge/Windows-0078D7?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![Batch Script](https://img.shields.io/badge/Batch_Script-.bat-4D4D4D?style=for-the-badge&logo=gnometerminal&logoColor=white)]()
+[![Admin Required](https://img.shields.io/badge/Requer-Administrador-red?style=for-the-badge&logo=shield&logoColor=white)]()
+[![YouTube](https://img.shields.io/badge/Tutorial-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/ymOwOXdzHGQ)
+
+<br/>
+
+> **Script desenvolvido pelo [Canal WINchester](https://www.youtube.com/WINchesterCanal)**  
+> Backup e restauração de drivers, arquivos pessoais e favoritos de navegadores — tudo em um só lugar.
+
+<br/>
+
+[📥 Download](#-download) · [🚀 Como Usar](#-como-usar) · [📂 Arquivos Pessoais](#-opção-1--arquivos-pessoais) · [🔧 Drivers](#-opção-2--drivers) · [🌐 Navegadores](#-opção-3--navegadores) · [🎥 Tutorial](#-tutorial)
+
+</div>
 
 ---
 
-## 📥 Download do script
+## 📥 Download
 
-Faça o download do script diretamente aqui:
+<div align="center">
 
-**[📄 WINbackup.bat](https://github.com/winchestercanal/driverbackup/blob/main/WINbackup.bat)**
+### **[⬇️ Clique aqui para baixar o WINbackup.bat](https://github.com/winchestercanal/driverbackup/blob/main/WINbackup.bat)**
 
-> ⚠️ **IMPORTANTE:** Execute sempre como Administrador!
+</div>
+
+> [!WARNING]
+> Execute sempre com o botão direito → **"Executar como administrador"**
 
 ---
 
-## 🚀 Como usar
+## 🚀 Como Usar
 
-Ao iniciar o script, você verá o **menu principal** com as seguintes opções:
+Ao iniciar o script, o menu principal será exibido:
 
-```plaintext
-  1 - Arquivos Pessoais (Backup)
-  2 - DRIVERS (backup/restauração)
-  3 - Navegadores (backup/restauração)
-  4 - Acessar tutorial
-  0 - Sair
+```
+  ===================================================
+    BACKUP E RESTAURACAO - WINchester
+  ===================================================
+
+    1 - Arquivos Pessoais (Backup)
+    2 - DRIVERS (backup/restauração)
+    3 - Navegadores (backup/restauração)
+    4 - Acessar tutorial
+    0 - Sair
 ```
 
+Escolha a opção digitando o número correspondente e pressione **Enter**.
+
 ---
 
-## 📂 Opção 1 – Arquivos Pessoais (Backup)
+## 📂 Opção 1 — Arquivos Pessoais
 
-Realiza o backup das suas pastas pessoais do Windows para um destino de sua escolha (ex: HD externo, pendrive).
+Faz o backup das suas pastas pessoais para qualquer destino — HD externo, pendrive, pasta de rede, etc.
 
-### Pastas disponíveis para backup:
-- Documentos
-- Imagens
-- Músicas
-- Vídeos
-- Downloads
-- Desktop
+### 📁 Pastas disponíveis
 
-### Modos de backup:
+| # | Pasta |
+|---|-------|
+| 1 | 📄 Documentos |
+| 2 | 🖼️ Imagens |
+| 3 | 🎵 Músicas |
+| 4 | 🎬 Vídeos |
+| 5 | ⬇️ Downloads |
+| 6 | 🖥️ Desktop |
 
-**`C` – Backup Completo**
-Copia todas as pastas listadas acima de uma só vez.
+### ⚙️ Modos de backup
 
-**`S` – Backup Seletivo**
-Permite escolher quais pastas deseja copiar. Digite os números separados por vírgula.
+<table>
+<tr>
+<td width="50%">
 
-**Exemplo:**
-```plaintext
+**`C` — Backup Completo**
+
+Copia todas as 6 pastas de uma vez.
+
+</td>
+<td width="50%">
+
+**`S` — Backup Seletivo**
+
+Você escolhe quais pastas copiar.
+
+```
 Sua seleção: 1,3,5
 ```
-*(Irá copiar apenas Documentos, Músicas e Downloads)*
+*(Documentos, Músicas e Downloads)*
 
-Após escolher o modo, informe o destino do backup:
-```plaintext
-Exemplo: L:\backup
+</td>
+</tr>
+</table>
+
+Após escolher o modo, informe o **destino** do backup:
+
+```
+Informe o destino: L:\backup
 ```
 
-O script criará uma pasta com os arquivos organizados no destino informado.
-
 ---
 
-## 🔧 Opção 2 – Drivers (Backup/Restauração)
+## 🔧 Opção 2 — Drivers
 
-### 2.1 – Fazer backup dos drivers
+Backup e restauração completa dos drivers do Windows usando `dism` e `pnputil`.
 
-Informe o destino onde deseja salvar os drivers:
+### 💾 Fazer Backup
 
-```plaintext
-Exemplo: L:\backup
+Informe o destino onde deseja salvar:
+
+```
+Destino: L:\backup
 ```
 
-O script criará automaticamente a pasta `DRIVERS` no destino informado e exportará todos os drivers instalados com o comando `dism`.
+O script criará automaticamente a pasta `DRIVERS` no destino e exportará todos os drivers instalados.
 
-### 2.2 – Restaurar drivers
-
-Informe o caminho da pasta onde estão os drivers que deseja restaurar:
-
-```plaintext
-Exemplo: L:\backup\DRIVERS
+```
+L:\backup\
+└── DRIVERS\
+    ├── driver1.inf
+    ├── driver2.inf
+    └── ...
 ```
 
-O script percorrerá a pasta e instalará todos os drivers `.inf` encontrados usando `pnputil`.
+### ♻️ Restaurar Drivers
 
----
+Informe o caminho da pasta com os drivers do backup:
 
-## 🌐 Opção 3 – Navegadores (Backup/Restauração)
-
-Realiza o backup e a restauração dos **favoritos** do Microsoft Edge e Google Chrome.
-
-> ⚠️ **Atenção:** As senhas **não são salvas automaticamente** por questões de segurança. Você precisa exportá-las manualmente em cada navegador.
-
-### 3.1 – Fazer backup dos favoritos
-
-Escolha o(s) navegador(es) desejado(s) e informe o destino do backup.
-
-Os favoritos serão salvos em:
-```plaintext
-<destino>\Navegadores\Edge\
-<destino>\Navegadores\Chrome\
+```
+Caminho: L:\backup\DRIVERS
 ```
 
-O script suporta **múltiplos perfis** do Chrome automaticamente.
-
-**Para exportar senhas manualmente:**
-
-| Navegador | Endereço |
-|---|---|
-| Microsoft Edge | `edge://settings/autofill/passwords` |
-| Google Chrome | `chrome://password-manager/settings` |
-
-### 3.2 – Restaurar favoritos
-
-Escolha o navegador e informe o caminho da pasta de backup.
-
-O script localizará o arquivo `Bookmarks` automaticamente, encerrará o navegador se estiver aberto para evitar conflitos, e restaurará os favoritos no perfil padrão.
-
-> ℹ️ Um backup do arquivo `Bookmarks` atual é feito automaticamente antes de sobrescrever.
-
-**Para importar senhas manualmente após a restauração:**
-
-| Navegador | Endereço |
-|---|---|
-| Microsoft Edge | `edge://settings/autofill/passwords` |
-| Google Chrome | `chrome://password-manager/settings` |
+O script instalará automaticamente **todos os drivers `.inf`** encontrados na pasta.
 
 ---
 
-## 📋 Log de execução
+## 🌐 Opção 3 — Navegadores
 
-A cada execução, o script gera automaticamente um arquivo de log na mesma pasta do script, com o nome:
+Backup e restauração dos **favoritos** do Microsoft Edge e Google Chrome.
 
-```plaintext
-drivers_backup_AAAA-MM-DD_HHMMSS.log
+> [!IMPORTANT]
+> **As senhas NÃO são salvas automaticamente** por questões de segurança.  
+> É necessário exportá-las manualmente em cada navegador.
+
+### 🔖 Fazer Backup dos Favoritos
+
+Escolha o navegador, informe o destino e o script salvará os favoritos em:
+
+```
+<destino>\
+└── Navegadores\
+    ├── Edge\
+    │   └── Bookmarks
+    └── Chrome\
+        ├── Default\
+        │   └── Bookmarks
+        └── Profile 1\
+            └── Bookmarks
 ```
 
-Esse arquivo registra todas as ações realizadas, incluindo erros e avisos, útil para diagnóstico.
+> ✅ Suporte automático a **múltiplos perfis** do Chrome.
+
+### 🔄 Restaurar Favoritos
+
+Informe o caminho da pasta de backup. O script irá:
+
+- 🔍 Localizar o arquivo `Bookmarks` automaticamente
+- ⛔ Encerrar o navegador se estiver aberto (evita conflitos)
+- 💾 Criar um backup do `Bookmarks` atual antes de sobrescrever
+- ✅ Restaurar os favoritos no perfil padrão
 
 ---
 
-## 🎥 Tutorial completo
+### 🔐 Exportar / Importar Senhas Manualmente
 
-Para entender como tudo funciona na prática, assista ao tutorial:
-
-**[▶️ Assistir no YouTube](https://youtu.be/ymOwOXdzHGQ)**
-
----
-
-## 🔗 Outros repositórios que você pode gostar
-
-- 🪟 [Configurações do Komorebi](https://github.com/winchestercanal/komorebi-configs)
-- 🎨 [Configurações do YASB](https://github.com/winchestercanal/Yasb)
+| Navegador | Ação | Endereço |
+|-----------|------|----------|
+| ![Edge](https://img.shields.io/badge/Microsoft_Edge-0078D7?style=flat&logo=microsoftedge&logoColor=white) | Exportar / Importar senhas | `edge://settings/autofill/passwords` |
+| ![Chrome](https://img.shields.io/badge/Google_Chrome-4285F4?style=flat&logo=googlechrome&logoColor=white) | Exportar / Importar senhas | `chrome://password-manager/settings` |
 
 ---
 
-Se este repositório te ajudou, considere deixar uma ⭐ no GitHub!
+## 📋 Log de Execução
+
+A cada execução, o script gera automaticamente um arquivo de log na mesma pasta:
+
+```
+drivers_backup_2025-03-06_143022.log
+```
+
+O log registra todas as ações, erros e avisos — útil para diagnóstico.
+
+---
+
+## 🎥 Tutorial
+
+<div align="center">
+
+[![Tutorial WINchester](https://img.shields.io/badge/▶_Assistir_Tutorial_Completo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/ymOwOXdzHGQ)
+
+</div>
+
+---
+
+## 🔗 Outros repositórios
+
+<div align="center">
+
+| Projeto | Descrição |
+|---------|-----------|
+| 🪟 [Komorebi Configs](https://github.com/winchestercanal/komorebi-configs) | Configurações do gerenciador de janelas Komorebi |
+| 🎨 [YASB Configs](https://github.com/winchestercanal/Yasb) | Configurações da status bar YASB |
+
+</div>
+
+---
+
+<div align="center">
+
+Se este repositório te ajudou, deixe uma ⭐ no GitHub!
+
+[![Canal WINchester](https://img.shields.io/badge/Canal_WINchester-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/WINchesterCanal)
+
+</div>
